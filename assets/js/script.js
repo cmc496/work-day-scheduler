@@ -7,10 +7,16 @@ today.textContent = currentDay;
 var row = document.querySelector('.row');
 var time = moment().format('h A');
 
-var hourDisplayed = document.getElementsByClassName('hour');
-for (i=0; i < (hourDisplayed.length)-1; i++){
-    if (hourDisplayed[i].innerHTML < time) {
-        row.setAttribute("class", "row col-9 past");
-        console.log(hourDisplayed[i].innerHTML)
-    }
+// var hourDisplayed = document.getElementById('hourZero');
+// for (i=0; i < (hourDisplayed.length); i++){
+//     if (hourDisplayed[i].innerHTML < time) {
+//         row.setAttribute("class", "row col-9 past");
+//         console.log(hourDisplayed[i].innerHTML)
+//     }
+// }
+
+var hourDisplayed = document.getElementById('hourZero').textContent;
+console.log(hourDisplayed);
+if (hourDisplayed < time) {
+    row.setAttribute("class", "row col-9 past");
 }
